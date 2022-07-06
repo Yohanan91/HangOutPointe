@@ -1,3 +1,3 @@
 data "template_file" "user_data" {
-    template = file("./resources/userdata.tpl")
+    template = file("userdata.tpl")
 }
