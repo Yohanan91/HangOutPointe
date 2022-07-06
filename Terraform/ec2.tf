@@ -28,3 +28,11 @@ resource "aws_instance" "mySlaveInstance" {
     Name = "jenkins_slave"
   }
 }
+
+resource "aws_eip" "mySlaveInstance" {
+  vpc      = true
+  instance = aws_instance.mySlaveInstance.id
+tags= {
+    Name = "jenkins_slave_elstic_ip"
+  }
+}
