@@ -35,3 +35,19 @@ Use your playbooks to install all the necessary software for your jenkins instan
 
 ##
 
+For this project we will be using eksctl to provision K8s clusters
+ use this command below 
+ eksctl create cluster --name hangout-eks --region us-east-2 --nodegroup-name my-nodes --node-type t3.small --managed --nodes 2 
+
+The eksctl tool uses CloudFormation under the hood, creating one stack for the EKS master control plane and another stack for the worker nodes.
+
+Click on Add Credentials, use Kubernetes configuration from drop down.
+
+execute the below command to get kubeconfig info, copy the entire content of the file:
+sudo cat ~/.kube/config
+
+Enter ID as K8S and choose enter directly and paste the above file content and save.
+
+By default, clusterrolebinding has system:anonymous set which blocks the cluster access. Execute the following command to set a clusterrole as cluster-admin which will give you the required access.
+
+kubectl create clusterrolebinding cluster-system-anonymous --clusterrole=cluster-admin --user=system:anonymous

@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-react-deployment
+  name: my-hangout-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: react-app
+      app: hangout-app
   template:
     metadata:
       labels:
-        app: react-app
+        app: hangout-app
     spec:
       containers:
         - name: hangout
@@ -22,10 +22,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: react-app-svc
+  name: hangout-app-svc
 spec:
   selector:
-    app: react-app
+    app: hangout-app
   ports:
     - protocol: TCP
       port: 8080
