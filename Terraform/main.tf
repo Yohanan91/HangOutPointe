@@ -11,13 +11,13 @@ provider "vault" {
     address = ""
 }
 
-# terraform {
-#     cloud {
-#     organization = "example-org-8994f8"
-#     hostname = "app.terraform.io" 
+terraform {
+    cloud {
+    organization = "example-org-8994f8"
+    hostname = "app.terraform.io" 
 
-#     workspaces {
-#       name = "Hangout Point"
-#     }
-#   }
-# }
+    workspaces {
+      name = "Hangout Pointe"
+    }
+  }
+}
