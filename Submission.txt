@@ -1,0 +1,37 @@
+## Set up the Jenkins server in master or slave architecture
+
+To achieve this we will be using Terraform to provision the infrastructure, I will give details below.
+Prerequiste
+1. Open an AWS account/any cloud account of your choice. (working with AWS).
+2. Create your AWS access key and secret keys.
+3. Install Terraform on your local machine
+4. If using remote backend for Terraform, set up your account also.
+5. Set up aws cli on your local machine.
+
+## 
+
+After coding up your terraform code for your infrastructure
+To get it to provision, run these commands
+(See Sample  Code in folder Terraform)
+terraform init
+terraform plan(not compulsory but advisable so you can see what your code will do).
+terraform apply.
+
+## 
+
+Go to AWS Console  to verify that your ec2 instances are running.
+
+Next set up your ec2 using Ansible as the  configuration management tool.
+write up your playbook for installation of jdk, maven and Jenkins.
+(see sample code in Folder Ansible).
+
+##
+
+Install ansible on your local machine.
+Edit Ansible hosts or create an inventory file
+sudo vi /etc/ansible/hosts
+set up connection from your local machine to the target host (Master and Slave nodes).
+Use your playbooks to install all the necessary software for your jenkins instance.
+
+##
+
