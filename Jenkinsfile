@@ -32,6 +32,14 @@ pipeline {
                 }
             }
         }
+
+        stage('Docker Run') {
+            steps{
+                script {
+                    dockerImage.Run()
+                }
+            }
+        }
     
         stage ('K8S Deploy') {
         steps {
