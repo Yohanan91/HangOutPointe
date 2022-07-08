@@ -36,7 +36,7 @@ pipeline {
         stage('Docker Run') {
             steps{
                 script {
-                    dockerImage.Run()
+                    dockerImage.run()
                 }
             }
         }
