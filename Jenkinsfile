@@ -32,6 +32,14 @@ pipeline {
                 }
             }
         }
+
+        stage('Docker Run') {
+            steps{
+                script {
+                sh 'docker run -d -p 8080:80 --rm --name myhangoutapp yohanan91/hangout:latest'
+                }
+            }
+        }
     
         stage ('K8S Deploy') {
         steps {
