@@ -33,14 +33,16 @@ pipeline {
             }
         }
 
-        stage('Docker Run') {
-            steps{
-                script {
-                    dockerImage.run()
-                }
-            }
-        }
-    
+        // stage('Docker Run') {
+        //     steps{
+        //         script {
+        //             dockerImage.run()
+        //         }
+        //     }
+        // }
+
+
+        // if you decide to deploy to a kubernetes cluster
         stage ('K8S Deploy') {
         steps {
             script {
